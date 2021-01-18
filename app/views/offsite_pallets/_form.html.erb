@@ -1,0 +1,52 @@
+<%= form_with(model: offsite_pallet, local: true) do |form| %>
+  <% if offsite_pallet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(offsite_pallet.errors.count, "error") %> prohibited this offsite_pallet from being saved:</h2>
+
+      <ul>
+      <% offsite_pallet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table table-bordered" >
+    <thead>
+      <tr>
+        <th> Pallet </th>
+        <th> Location </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= form.text_field :pallet, readonly: true %> </td>
+        <td> <%= form.text_field :location %> </td>
+      </tr>
+  </tbody>
+  </table>
+  <h3>Parts</h3>
+  <table class="table table-bordered" >
+    <thead>
+      <tr>
+        <th> Part code </th>
+        <th> Lot </th>
+        <th> Qty </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= form.fields_for :offsite_pallet_parts do |p| %>
+        <tr>
+          <td> <%= p.text_field :part_code, size: 10 %> </td>
+          <td> <%= p.text_field :lot, size: 10 %> </td>
+          <td> <%= p.number_field :qty, min: 1, step: 1 %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<br>

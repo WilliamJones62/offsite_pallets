@@ -1,0 +1,2 @@
+module OffsitePalletsHelper
+end

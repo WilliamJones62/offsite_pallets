@@ -1,0 +1,11 @@
+<span class="primary-logo">
+</span>
+<h1 class="title">Offsite Pallets</h1>
+
+<div id="navbar">
+  <span><%= link_to 'List', offsite_pallets_path, class: "btn btn-primary" %></span>
+  <span><%= link_to 'New Offsite Pallet', new_offsite_pallet_path, class: "btn btn-primary" %></span>
+</div>
+<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+<br>

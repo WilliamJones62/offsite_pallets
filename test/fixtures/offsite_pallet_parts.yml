@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offsite_pallet_id: 1
+  part_code: MyString
+  qty: 1
+
+two:
+  offsite_pallet_id: 1
+  part_code: MyString
+  qty: 1

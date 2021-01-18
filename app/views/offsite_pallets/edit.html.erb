@@ -1,0 +1,6 @@
+<h2>Editing Pallet <%= @offsite_pallet.pallet %></h2>
+
+<%= render 'form', offsite_pallet: @offsite_pallet %>
+
+<%= link_to 'Print', offsite_pallet_path(@offsite_pallet, format: "pdf"), class: "btn btn-primary" %>
+<%= link_to 'Back', offsite_pallets_path, class: "btn btn-primary" %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h2>List</h2>
+
+<table id="listtab"  class="stripe" class="mytable" class="display" cellspacing="0" >
+  <thead>
+    <tr>
+      <th>Pallet</th>
+      <th>Location</th>
+      <th>Create Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offsite_pallets.each do |offsite_pallet| %>
+      <tr>
+        <td><%= offsite_pallet.pallet %> </td>
+        <td><%= offsite_pallet.location %> </td>
+        <td><%= display_date(offsite_pallet.created_at) %> </td>
+        <td><%= link_to 'Print', offsite_pallet_path(offsite_pallet, format: "pdf"), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_offsite_pallet_path(offsite_pallet), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Delete', offsite_pallet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Offsite Pallet', new_offsite_pallet_path , class: "btn btn-primary"%>
